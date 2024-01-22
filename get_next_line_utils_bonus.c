@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/07 17:29:30 by csouita           #+#    #+#             */
-/*   Updated: 2024/01/22 20:13:46 by csouita          ###   ########.fr       */
+/*   Created: 2024/01/22 21:09:03 by csouita           #+#    #+#             */
+/*   Updated: 2024/01/22 21:12:26 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -91,25 +91,3 @@ char	*ft_strjoin(char *s1, char *s2)
 	free(s1);
 	return (str);
 }
-
-// int main ()
-// {
-// 	printf("%s",ft_strjoin("charaf","souita"));
-// }
-
-// #include <string.h>
-// int main ()
-// {
-// 	char dest[20];
-// 	char dest1[20];
-// 	char *result = ft_memcpy(NULL,NULL,7);
-// 	printf(" %s\n",(char *)result);
-// // 	char *result1 = memcpy(NULL,NULL,7);
-// // 	printf("%s",result1);
-// }
-
-// int main ()
-// {
-// 	printf("%d",ft_strlen("sihjh"));
-// }
-
