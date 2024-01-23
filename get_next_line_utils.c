@@ -112,4 +112,3 @@ char	*ft_strjoin(char *s1, char *s2)
 // {
 // 	printf("%d",ft_strlen("sihjh"));
 // }
-

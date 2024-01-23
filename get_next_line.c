@@ -6,12 +6,9 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:49:03 by csouita           #+#    #+#             */
-/*   Updated: 2024/01/22 20:15:59 by csouita          ###   ########.fr       */
+/*   Updated: 2024/01/23 19:12:16 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-#include "get_next_line.h"
 
 // char	*get_read(char *save_str, int fd)
 // {
@@ -112,6 +109,7 @@
 // 	save_str = left_lines(line, save_str);
 // 	return (line);
 // }
+#include "get_next_line.h"
 
 char	*all_buffer(char *str, int fd)
 {
@@ -127,15 +125,13 @@ char	*all_buffer(char *str, int fd)
 		count = read(fd, buffer, BUFFER_SIZE);
 		if (count == -1)
 			return (free(str), free(buffer), NULL);
-		if (count == 0)  // Added this condition to handle end of file
-			break;
+		if (count == 0)
+			break ;
 		buffer[count] = '\0';
 		str = ft_strjoin(str, buffer);
 	}
 	return (free(buffer), str);
 }
-
-
 
 char	*get_line(char *saved_s)
 {
@@ -196,7 +192,7 @@ char	*get_next_line(int fd)
 	static char	*saved_s;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE  > 2147483647)
+	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE > 2147483647)
 		return (NULL);
 	saved_s = all_buffer(saved_s, fd);
 	if (!saved_s)
@@ -207,17 +203,18 @@ char	*get_next_line(int fd)
 	saved_s = left_line(saved_s, line);
 	return (line);
 }
-int main ()
-{
-	int fd = open("tet.text",00);
-	char *line;
-	line = get_next_line(fd);
-	while (line)
-    {
-        printf("%s", line);
-        free(line);
-		line = get_next_line(fd);
-	}
-	free(line);
-    close(fd);
-}
+
+// int	main(void)
+// {
+// 	int	fd = open("tet.text", O_RDWR | O_CREAT);
+// 	char *line;
+// 	line = get_next_line(fd);
+// 	while (line)
+// 	{
+// 		printf("%s", line);
+// 		free(line);
+// 		line = get_next_line(fd);
+// 	}
+// 	free(line);
+// 	close(fd);
+// }
