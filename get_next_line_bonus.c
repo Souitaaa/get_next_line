@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 16:33:46 by csouita           #+#    #+#             */
-/*   Updated: 2024/01/23 19:11:14 by csouita          ###   ########.fr       */
+/*   Updated: 2024/01/26 15:40:59 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*get_line(char *saved_s)
 	size_t	i;
 
 	i = 0;
-	if (!*saved_s)
+	if (!saved_s[i])
 	{
 		free(saved_s);
 		return (NULL);
@@ -93,7 +93,7 @@ char	*get_next_line(int fd)
 	static char	*saved_s[1024];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE > 2147483647)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	saved_s[fd] = all_buffer(saved_s[fd], fd);
 	if (!saved_s[fd])

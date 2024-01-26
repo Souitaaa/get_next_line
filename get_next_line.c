@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:49:03 by csouita           #+#    #+#             */
-/*   Updated: 2024/01/23 19:12:16 by csouita          ###   ########.fr       */
+/*   Updated: 2024/01/26 15:44:29 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,6 +184,7 @@ char	*left_line(char *saved_s, char *line)
 		new_str[j++] = saved_s[i++];
 	new_str[j] = '\0';
 	free(saved_s);
+	free(line);
 	return (new_str);
 }
 
@@ -192,7 +193,7 @@ char	*get_next_line(int fd)
 	static char	*saved_s;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE > 2147483647)
+	if (fd < 0 || BUFFER_SIZE <= 0 )
 		return (NULL);
 	saved_s = all_buffer(saved_s, fd);
 	if (!saved_s)
@@ -204,17 +205,3 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-// int	main(void)
-// {
-// 	int	fd = open("tet.text", O_RDWR | O_CREAT);
-// 	char *line;
-// 	line = get_next_line(fd);
-// 	while (line)
-// 	{
-// 		printf("%s", line);
-// 		free(line);
-// 		line = get_next_line(fd);
-// 	}
-// 	free(line);
-// 	close(fd);
-// }

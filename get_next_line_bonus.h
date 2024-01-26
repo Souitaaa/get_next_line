@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 21:11:25 by csouita           #+#    #+#             */
-/*   Updated: 2024/01/22 21:12:09 by csouita          ###   ########.fr       */
+/*   Updated: 2024/01/24 16:23:35 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
+#  define BUFFER_SIZE 42
 # endif
 
 char	*ft_strchr(const char *s, int c);
